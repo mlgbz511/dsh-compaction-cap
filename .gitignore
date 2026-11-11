@@ -1,0 +1,22 @@
+# Dependencies & build artifacts
+node_modules/
+dist/
+*.tgz
+
+# Environment & credentials
+.env
+.env.*
+*.pem
+*.key
+
+# Logs & runtime state
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+coverage/

@@ -1,0 +1,10 @@
+- insert:
+    - id: dsh-compaction-cap
+      name: dsh-compaction-cap
+      config:
+        enabled: true
+        preset: compact
+        minContextWindow: 400000
+        maxThresholdTokens: 180000
+        retainTokens: 32000
+        debugLog: false

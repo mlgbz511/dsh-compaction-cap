@@ -1,0 +1,51 @@
+{
+  "name": "dsh-compaction-cap",
+  "version": "0.2.0",
+  "description": "Cap automatic pressure-compaction threshold for >=400K context models across all DSH providers and presets, with live UI settings and /cap slash commands.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml"
+  ],
+  "scripts": {
+    "test": "node --check index.js && node --check client.js && node tests/compaction-cap.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "compaction",
+    "context-window"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlgbz511/dsh-compaction-cap.git"
+  },
+  "homepage": "https://github.com/mlgbz511/dsh-compaction-cap#readme",
+  "bugs": {
+    "url": "https://github.com/mlgbz511/dsh-compaction-cap/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "license": "MIT"
+}
